@@ -67,6 +67,25 @@ async function getMyRequests(){
             }
 
         }
+        console.log("This:" + pDiv.innerText);
+        if(pDiv.innerText == "Pending Requests"){
+            let iDiv = document.createElement("div");
+            iDiv.className = "tab";
+            iDiv.innerHTML = "<h5>No Pending Requests</h5><br>"
+            pDiv.appendChild(iDiv);
+        }
+        if(aDiv.innerText == "Approved Requests"){
+            let iDiv = document.createElement("div");
+            iDiv.className = "tab";
+            iDiv.innerHTML = "<h5>No Approved Requests</h5><br>"
+            aDiv.appendChild(iDiv);
+        }
+        if(dDiv.innerText == "Denied Requests"){
+            let iDiv = document.createElement("div");
+            iDiv.className = "tab";
+            iDiv.innerHTML = "<h5>No Denied Requests</h5><br>"
+            dDiv.appendChild(iDiv);
+        }
         document.getElementById("requests").appendChild(pDiv);
         document.getElementById("requests").appendChild(aDiv);
         document.getElementById("requests").appendChild(dDiv);

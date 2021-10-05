@@ -55,6 +55,7 @@ public class ReimbursementDao implements ReimbursementDaoI {
 			ArrayList<Reimbursement> rl = new ArrayList<>();
 			while(rs.next()) {
 				Reimbursement r = new Reimbursement(
+						rs.getInt("reimbursment_id"),
 						rs.getInt("amount"), 
 						rs.getString("description"), 
 						sDao.getStatusById(rs.getInt("status_id_fk")),
@@ -82,6 +83,7 @@ public class ReimbursementDao implements ReimbursementDaoI {
 			ArrayList<Reimbursement> rl = new ArrayList<>();
 			while(rs.next()) {
 				Reimbursement r = new Reimbursement(
+						rs.getInt("reimbursment_id"),
 						rs.getInt("amount"), 
 						rs.getString("description"), 
 						sDao.getStatusById(rs.getInt("status_id_fk")),

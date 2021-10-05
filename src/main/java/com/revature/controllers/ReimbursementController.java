@@ -48,7 +48,7 @@ public class ReimbursementController {
 	
 	public Handler getAllRequestsHandler = (ctx) -> {
 			
-		if(ctx.req.getSession(false) != null) { //if a session exists...
+		//if(ctx.req.getSession(false) != null) { //if a session exists...
 			
 			//we create an Array with Avenger data (using the service to talk to the dao)
 			List<Reimbursement> allRequests = rs.getAllRequests();
@@ -62,9 +62,9 @@ public class ReimbursementController {
 			
 			ctx.status(200); //200 = OK (success)
 			
-		} else {
-				ctx.status(403); //forbidden status code 
-		}
+//		} else {
+//				ctx.status(403); //forbidden status code 
+//		}
 	};
 	
 	public Handler createRequestHandler = (ctx) -> {

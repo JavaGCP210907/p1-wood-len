@@ -12,16 +12,17 @@
     <div class = "text-center">
         <h1 class ="Lh1">Employee Reimbursement<br/>System</h1>
     </div>
+    <div id="new-user-warning" class="warning-row justify-content-center"></div>
     <div class="d-flex p-2 justify-content-center">
         <div class="card semi-transparent-card">
-            <form class="card-body text-dark">
+            <form class="card-body text-dark" id="createBlock">
                 <div class="form-group buffer">
                     <label for="uname"><b>Create Username</b></label>
-                    <input class="form-control" type="text" placeholder="Username" name="uname" required>
+                    <input id="uname" class="form-control" type="text" placeholder="Username" name="uname" required>
                 </div>
                 <div class="form-group buffer">
                     <label for="psw"><b>Create Password</b></label>
-                    <input class="form-control" type="text" placeholder="Password" name="psw" required>
+                    <input id="password" class="form-control" type="text" placeholder="Password" name="psw" required>
                 </div>
                 <div class="form-group buffer">
                     <button class="form-control btn my-button" id="next">Next</button>
@@ -29,5 +30,6 @@
             </form>
         </div>
     </div>
+    <script src="newUser.js"></script>
 </body>
 </html>

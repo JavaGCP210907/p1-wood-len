@@ -4,6 +4,7 @@ import java.sql.SQLException;
 
 import com.revature.controllers.LoginController;
 import com.revature.controllers.ReimbursementController;
+import com.revature.controllers.UserController;
 import com.revature.dao.ReimbursementDao;
 import com.revature.utils.ConnectionUtil;
 
@@ -15,6 +16,7 @@ public class Main {
 		
 		ReimbursementController rc = new ReimbursementController(); 
 		LoginController lc = new LoginController();
+		UserController uc = new UserController();
 		
 		try{
 			ConnectionUtil.getConnection();
@@ -52,6 +54,8 @@ public class Main {
 		app.post("/Login", lc.getUserByKeysHandler);
 		app.post("/changeStatus", rc.changeStatusHandler);
 		app.get("/allReimbursements", rc.getAllRequestsHandler);
+		app.post("/checkUsername", uc.usernameExistsHandler);
+		app.post("/createUser", uc.createUserHandler);
 	}
 
 }

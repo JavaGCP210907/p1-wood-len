@@ -48,14 +48,6 @@ a:hover{
     color: #606a70;
 }
 
-/* #newAccount{
-    color: #313639;
-}
-
-#newAccount:hover{
-    color: #606a70;
-} */
-
 :hover.my-button{
     background: radial-gradient(#A0CEEA);
     -moz-box-shadow:    inset 0 0 10px rgb(0,0,0,.1);
@@ -70,4 +62,17 @@ a:hover{
 .request-card{
     border-radius: 10px;
     overflow: hidden;
+}
+
+.tab {
+    margin-left: 40px;
+    color: #606a70;
+}
+
+.warning-row{
+    color: #FC625D;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }

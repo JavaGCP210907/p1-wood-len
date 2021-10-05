@@ -36,9 +36,10 @@ public class Reimbursement {
 	
 	
 
-	public Reimbursement(int amount, String description, Status status, Type type, Date submit_date,
+	public Reimbursement(int id, int amount, String description, Status status, Type type, Date submit_date,
 			Date resolved_date) {
 		super();
+		this.id= id;
 		this.amount = amount;
 		this.description = description;
 		this.status = status;
