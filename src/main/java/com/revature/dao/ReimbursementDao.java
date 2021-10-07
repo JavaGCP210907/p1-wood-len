@@ -9,6 +9,9 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.models.Reimbursement;
 import com.revature.utils.ConnectionUtil;
 
@@ -16,6 +19,8 @@ public class ReimbursementDao implements ReimbursementDaoI {
 
 	private static StatusDao sDao = new StatusDao();
 	private static TypeDao tDao = new TypeDao();
+	
+	Logger log = LogManager.getLogger(ReimbursementDao.class);
 	
 	@Override
 	public void createRequest(int userId, String type, int amount, String description) {
@@ -38,6 +43,7 @@ public class ReimbursementDao implements ReimbursementDaoI {
 			ps.setTimestamp(5, new Timestamp(System.currentTimeMillis()));
 			ps.setString(6, description);
 			ps.executeUpdate();
+			log.info("User " + userId + "created a new reimbursment request");
 		}
 		catch(SQLException e) {
 			System.out.println("createRequest");
@@ -114,6 +120,7 @@ public class ReimbursementDao implements ReimbursementDaoI {
 			ps.setInt(3, statusId);
 			ps.setInt(4, rId);
 			ps.executeUpdate();
+			log.info("User" + userId + "changed the status of request " + rId + "to " + status);
 		}
 		catch(SQLException e) {
 			System.out.println("changeStatus");

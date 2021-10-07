@@ -1,8 +1,8 @@
 package p1;
 
-import static org.junit.Assert.assertNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.sql.Connection;
@@ -12,10 +12,10 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
-import org.junit.BeforeClass;
-import org.junit.FixMethodOrder;
-import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.MethodOrderer.Alphanumeric;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
 
 import com.revature.models.Reimbursement;
 import com.revature.models.User;
@@ -24,15 +24,14 @@ import com.revature.services.ReimbursementService;
 import com.revature.services.UserService;
 import com.revature.utils.ConnectionUtil;
 
-
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class Tests {
+@TestMethodOrder(Alphanumeric.class)
+class Tests {
 
 	private static LoginService ls = new LoginService();
 	private static ReimbursementService rs = new ReimbursementService();
 	private static UserService us = new UserService();
 	
-	@BeforeClass
+	@BeforeAll
 	public static void before() {
 		System.out.println("CLEAR");
 		try(Connection conn = ConnectionUtil.getConnection()){
@@ -189,5 +188,4 @@ public class Tests {
 		System.out.println("   Test Passed");
 	}
 
-	
 }

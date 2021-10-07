@@ -5,12 +5,18 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.revature.models.User;
 import com.revature.utils.ConnectionUtil;
 
 public class UserDao implements UserDaoI {
 
 	private RoleDao roleDao = new RoleDao();
+	
+	Logger log = LogManager.getLogger(UserDao.class);
+	
 	@Override
 	public void createUser(User user) {
 		try(Connection conn = ConnectionUtil.getConnection()){
@@ -24,6 +30,7 @@ public class UserDao implements UserDaoI {
 			ps.setString(5, user.getLastName());
 			ps.setString(6, user.getEmail());
 			ps.executeUpdate();
+			log.info("New user: " + user.toString() + " created");
 		}
 		catch(SQLException e) {
 			System.out.println("createUser");
