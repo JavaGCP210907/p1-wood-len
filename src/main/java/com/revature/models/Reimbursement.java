@@ -12,10 +12,25 @@ public class Reimbursement {
 	private Type type;
 	private Date submit_date;
 	private Date resolved_date;
+	private String name;
 
 	public Reimbursement() {
 		super();
 	}
+
+	public Reimbursement(int id, int amount, String description, Status status, Type type, Date submit_date,
+			Date resolved_date, String name) {
+		super();
+		this.id = id;
+		this.amount = amount;
+		this.description = description;
+		this.status = status;
+		this.type = type;
+		this.submit_date = submit_date;
+		this.resolved_date = resolved_date;
+		this.name = name;
+	}
+
 
 	public Reimbursement(int id, int amount, String description, Status status, Type type) {
 		super();

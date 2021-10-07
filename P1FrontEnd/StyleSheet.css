@@ -70,9 +70,13 @@ a:hover{
 }
 
 .warning-row{
-    color: #FC625D;
+    color: #DF4846;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
+
+/* #heading{
+    position: fixed;
+} */

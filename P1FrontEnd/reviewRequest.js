@@ -42,11 +42,12 @@ async function getAllRequests(){
             let d2 = document.createElement("div");
             d2.className = "request-card shadow card semi-transparent-card";
             let img = document.createElement("img");
-            img.src = "header.jpg"
+            img.src = "header.png"
             img.className = "card-img-top";
             let card = document.createElement("div");
             card.className = "card-body text-dark";
-            card.innerHTML = "<b>Amount: $" + request.amount + 
+            card.innerHTML ="<b>Requested By: " + request.name + 
+                            "</b><br><b>Amount: $" + request.amount + 
                             "</b><br>Request Type: " + request.type.typeName +
                             "<br>Submitted Date: " + request.submit_date;
             if(request.resolved_date){

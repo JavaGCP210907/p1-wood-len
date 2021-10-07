@@ -47,24 +47,16 @@ public class ReimbursementController {
 	};
 	
 	public Handler getAllRequestsHandler = (ctx) -> {
-			
-		//if(ctx.req.getSession(false) != null) { //if a session exists...
-			
-			//we create an Array with Avenger data (using the service to talk to the dao)
 			List<Reimbursement> allRequests = rs.getAllRequests();
 			
-			//instantiate a Gson object to make JSON <-> POJO conversions (POJO - plain old java object)
+			
 			Gson gson = new Gson();
 			
-			String JSONRequests = gson.toJson(allRequests); //convert our Java object into a JSON String
+			String JSONRequests = gson.toJson(allRequests); 
 			
-			ctx.result(JSONRequests); //return our Avengers
+			ctx.result(JSONRequests);
 			
-			ctx.status(200); //200 = OK (success)
-			
-//		} else {
-//				ctx.status(403); //forbidden status code 
-//		}
+			ctx.status(200);
 	};
 	
 	public Handler createRequestHandler = (ctx) -> {

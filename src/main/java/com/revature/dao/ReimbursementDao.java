@@ -49,7 +49,7 @@ public class ReimbursementDao implements ReimbursementDaoI {
 	@Override 
 	public List<Reimbursement> getAllRequests(){
 		try(Connection conn = ConnectionUtil.getConnection()){
-			String query = "Select * from reimbursements";
+			String query = "SELECT first_name, last_name, reimbursment_id, status_id_fk, type_id_fk, amount, description, submit_date, resolved_date FROM reimbursements JOIN users ON user_id_fk = user_id;";
 			Statement s = conn.createStatement();
 			ResultSet rs = s.executeQuery(query);
 			ArrayList<Reimbursement> rl = new ArrayList<>();
@@ -61,7 +61,8 @@ public class ReimbursementDao implements ReimbursementDaoI {
 						sDao.getStatusById(rs.getInt("status_id_fk")),
 						tDao.getTypeById(rs.getInt("type_id_fk")),
 						rs.getDate("submit_date"),
-						rs.getDate("resolved_date")
+						rs.getDate("resolved_date"),
+						rs.getString("first_name") + " " + rs.getString("last_name")
 						);
 				rl.add(r);
 			}
