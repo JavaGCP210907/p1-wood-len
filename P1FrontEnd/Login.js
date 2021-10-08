@@ -30,7 +30,12 @@ async function loginFunc(){
         sessionStorage.setItem('userId', vars.userId);
         sessionStorage.setItem('roleId', vars.roleId);
         console.log("Status: " + response.status);
-        window.location.replace("HomePage.html");
+        if(vars.roleId == 1){
+            window.location.replace("HomePage.html");
+        }
+        else{
+            window.location.replace("reviewRequest.html");
+        }
     } else {
         document.getElementById("login-row").innerText="Username or password not recognized."
     }

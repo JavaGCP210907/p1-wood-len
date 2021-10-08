@@ -137,7 +137,7 @@ function trythis(){
 trythis();
 
 async function changeStatus(){
-    let id = this.id[this.id.length-1];
+    let id = this.id.match(/\d+/)[0];
     let r = {
         rId: id,
         userId: Number(sessionStorage.getItem("userId")),

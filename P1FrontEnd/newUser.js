@@ -111,7 +111,7 @@ async function createUser(user){
     //String username, String password, String fname, String lname, String email, int roleId
     console.log("1");
     let rid = 1;
-    if(document.getElementById("manager")){
+    if(document.getElementById("manager").checked){
         rid = 2;
     }
     let u = {
@@ -135,7 +135,8 @@ async function createUser(user){
 
     if(response.status === 200) {
         console.log(response.status);
-        document.getElementById("create-block").innerHTML = "<h5 class=\"buffer text-center\">Request Submitted!</h5>";
+        document.getElementById("new-user-warning").innerText="";
+        document.getElementById("create-block").innerHTML = "<h5 class=\"buffer text-center\">User Created!</h5>";
 
     }
     else{

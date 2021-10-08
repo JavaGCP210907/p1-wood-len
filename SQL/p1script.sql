@@ -47,6 +47,7 @@ VALUES ('lodging'), ('travel'), ('food'), ('other');
 SELECT * FROM types;
 
 SELECT * FROM users;
+SELECT * FROM reimbursements;
 
 Select * From users; Where username = 'username' AND password = 'password';
 INSERT INTO users (role_id_fk, username, PASSWORD, first_name, last_name, email)

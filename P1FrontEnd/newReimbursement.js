@@ -1,6 +1,9 @@
 if(sessionStorage.length == 0){
     document.getElementById("logout").click();
 }
+if(sessionStorage.getItem("roleId") == 2){
+    window.location.replace("reviewRequest.html");
+}
 
 const url = "http://localhost:8090/" 
 
